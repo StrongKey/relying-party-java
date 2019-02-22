@@ -1,5 +1,5 @@
 # relying-party-java
-###Sample Java code for a FIDO relying party (RP)###
+#### Sample Java code for a FIDO relying party (RP) ####
 
 To run this application on GlassFish:
 ```
