@@ -25,12 +25,6 @@ keytool -importcert -noprompt -keystore <GlassFish Install location>/domains/dom
 ```
 
 
-
-## Installation
-Download the installation package [here](https://github.com/StrongKey/FIDO-Server/tree/master/fidoserver/fidoserverInstall/src) and save it, then follow [the installation instructions](https://github.com/StrongKey/FIDO-Server/blob/master/docs/Installation_Guide_Linux.md) to get it running.
-
-To see it in action, sample code is provided in the links below.
-
 ## Sample Code
 Sample WebAuthn code is also provided with a brief explanation:
 
