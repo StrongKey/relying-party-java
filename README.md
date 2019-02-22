@@ -23,3 +23,26 @@ If the FIDO server against which tests are run uses a self-signed certificate (o
 ```
 keytool -importcert -noprompt -keystore <GlassFish Install location>/domains/domain1/config/cacerts.jks -storepass <Keystore Password> -alias <FIDO server's hostname> -file <FIDO server's certificate>
 ```
+
+
+
+## Installation
+Download the installation package [here](https://github.com/StrongKey/FIDO-Server/tree/master/fidoserver/fidoserverInstall/src) and save it, then follow [the installation instructions](https://github.com/StrongKey/FIDO-Server/blob/master/docs/Installation_Guide_Linux.md) to get it running.
+
+To see it in action, sample code is provided in the links below.
+
+## Sample Code
+Sample WebAuthn code is also provided with a brief explanation:
+
+* [WebAuthn](https://github.com/StrongKey/WebAuthn) - JavaScript sample
+
+## API docs
+[Open API documentation for FIDO2/WebAuthn](https://github.com/StrongKey/FIDO-Server/blob/master/docs/fido-openapi.yaml)
+
+## Contributing
+If you would like to contribute to the FIDO2 Community Edition Server project, please sign and return the [Contributor License Agreement (CLA)](https://cla-assistant.io/StrongKey/FIDO-Server).
+
+## Licensing
+This project is currently licensed under the [GNU Lesser General Public License v2.1](https://github.com/StrongKey/FIDO-Server/blob/master/LICENSE).
+
+Bouncy Castle Federal Information Processing Standards (BC FIPS) is included with permission from the Legion of the Bouncy Castle, Inc. Source and other details for the module, as well as any updates, are available from the Legion's website at https://www.bouncycastle.org/fips-java.
