@@ -2,7 +2,9 @@
 Sample Java code for FIDO relying party
 
 To run this application on GlassFish:
+```
 asadmin deploy webauthntutorial.war
+```
 
 This .war file can either come from the precompiled .war file in this project or compiled from source.
 
