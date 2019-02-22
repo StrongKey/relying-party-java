@@ -27,13 +27,12 @@ keytool -importcert -noprompt -keystore <GlassFish Install location>/domains/dom
 ## API docs
 [Open API documentation for FIDO2/WebAuthn](https://github.com/StrongKey/FIDO-Server/blob/master/docs/fido-openapi.yaml)
 
-## Contributing
-If you would like to contribute to the [FIDO2 Community Edition Server](https://github.com/StrongKey/FIDO-Server) project, please sign and return the [Contributor License Agreement (CLA)](https://cla-assistant.io/StrongKey/FIDO-Server).
+If you would like to contribute to the [FIDO2 Community Edition Server](https://github.com/StrongKey/FIDO-Server) project, please read [CONTRIBUTING.md](https://github.com/StrongKey/relying-party-java/blob/master/CONTRIBUTING.md), then sign and return the [Contributor License Agreement (CLA)](https://cla-assistant.io/StrongKey/FIDO-Server).
 
 ## Other Samples
 * [WebAuthn](https://github.com/StrongKey/WebAuthn) - JavaScript sample
 
 ## Licensing
-This project is currently licensed under the [GNU Lesser General Public License v2.1](https://github.com/StrongKey/FIDO-Server/blob/master/LICENSE).
+This project is currently licensed under the [GNU Lesser General Public License v2.1](https://github.com/StrongKey/relying-party-java/blob/master/LICENSE).
 
 
