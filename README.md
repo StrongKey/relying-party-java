@@ -10,7 +10,7 @@ This .war file can either come from the precompiled .war file in this project or
 
 
 Additional configuration:
-If the FIDO server to be tested is not Strongkey's publicly availible server, a webauthntutorial.properties file must be created in the directory path /usr/local/strongkey/webauthntutorial/etc/ with the following values:
+If the FIDO server to be tested is not Strongkey's publicly availible server, a **webauthntutorial.properties** file must be created in the directory path */usr/local/strongkey/webauthntutorial/etc/* with the following values:
 ```
 webauthntutorial.cfg.property.apiuri=<Your StrongKey FIDO Server URL>/api
 webauthntutorial.cfg.property.did=1
