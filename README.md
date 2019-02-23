@@ -36,10 +36,14 @@ asadmin deploy webauthntutorial.war
 
 (Note that the default admin username/password as set by the install script for the FIDO Server is admin/adminadmin.)
 
-5. The FIDO server's certificate must be added to your application's TrustStore. In GlassFish this can be done via the command:
+5. Test that the servlet is running by running the following curl command and confirming that you get a HTTP 405 error.
+
+```sh
+curl -k https://localhost:8181/webauthntutorial/preregister
 ```
-keytool -importcert -noprompt -keystore <GlassFish Install location>/domains/domain1/config/cacerts.jks -storepass <Keystore Password> -alias <FIDO server's hostname> -file <FIDO server's certificate>
-```
+
+6. For further testing, check out the sample [StrongKey WebAuthn client](https://github.com/StrongKey/WebAuthn).
+
 
 If you would like to contribute to the [FIDO2 Relying Party](https://github.com/StrongKey/FIDO-Server) project, please read [CONTRIBUTING.md](https://github.com/StrongKey/relying-party-java/blob/master/CONTRIBUTING.md), then sign and return the [Contributor License Agreement (CLA)](https://cla-assistant.io/StrongKey/FIDO-Server).
 
