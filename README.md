@@ -28,7 +28,7 @@ cd /usr/local/strongkey
 wget https://github.com/StrongKey/relying-party-java/raw/master/webauthntutorial.war
 ```
 
-2. Add the war file to Payara 
+4. Add the war file to Payara 
 
 ```sh
 asadmin deploy webauthntutorial.war
@@ -36,17 +36,7 @@ asadmin deploy webauthntutorial.war
 
 (Note that the default admin username/password as set by the install script for the FIDO Server is admin/adminadmin.)
 
-Additional configuration:
-If the FIDO server to be tested is not Strongkey's publicly available server, a **webauthntutorial.properties** file must be created in the directory path */usr/local/strongkey/webauthntutorial/etc/* with the following values:
-```
-webauthntutorial.cfg.property.apiuri=<Your StrongKey FIDO Server URL>/api
-webauthntutorial.cfg.property.did=1
-webauthntutorial.cfg.property.accesskey=<Your configured access key>
-webauthntutorial.cfg.property.secretkey=<Your configured secret key>
-```
-
-
-If the FIDO server to be tested uses a self-signed certificate (or a certificate not trusted by your application server), the FIDO server's certificate must be added to your application's TrustStore. In GlassFish this can be done via the command:
+5. The FIDO server's certificate must be added to your application's TrustStore. In GlassFish this can be done via the command:
 ```
 keytool -importcert -noprompt -keystore <GlassFish Install location>/domains/domain1/config/cacerts.jks -storepass <Keystore Password> -alias <FIDO server's hostname> -file <FIDO server's certificate>
 ```
