@@ -1,4 +1,4 @@
-# Contributing to StrongKey's FIDO Server Relying Party
+# Contributing to StrongKey's FIDO Server
 
 We welcome contributions to this open-source FIDO Server Relying Party (RP)! This guide provides some tips for successful contributions.
 
