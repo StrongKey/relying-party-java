@@ -55,7 +55,7 @@ This project is a sample Relying Party (RP) Java Servlet written to work with th
 
     **NOTE: The default administrative username/password as set by the install script for the FIDO Server is _admin/adminadmin_.**
 
-8. Test that the servlet is running by executing the following Curl command and confirming that you get a HTTP 405 error.
+8. Test that the servlet is running by executing the following Curl command and confirming that you get an HTTP 405 error.
 
     ```sh
     curl -k https://localhost:8181/webauthntutorial/preregister
