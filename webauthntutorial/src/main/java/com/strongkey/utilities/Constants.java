@@ -44,6 +44,7 @@ public class Constants {
     public static final String RP_PREAUTHENTICATE_PATH = "preauthenticate";
     public static final String RP_AUTHENTICATE_PATH = "authenticate";
     public static final String RP_ISLOGGEDIN_PATH = "isLoggedIn";
+    public static final String RP_LOGOUT_PATH = "logout";
     public static final String RP_PATH_DELETEACCOUNT = "deleteAccount";
     public static final String RP_PATH_GETKEYS = "getkeysinfo";
     public static final String RP_PATH_REMOVEKEYS = "removeKeys";

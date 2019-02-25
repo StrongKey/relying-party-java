@@ -265,14 +265,33 @@ public class WebauthnService {
         try {
             HttpSession session = request.getSession(false);
             if (session == null) {
-                return generateResponse(Response.Status.OK, Constants.RP_JSON_VALUE_FALSE_STRING);
+                return generateResponse(Response.Status.OK, "");
             }
             String username = (String) session.getAttribute(Constants.SESSION_USERNAME);
             Boolean isAuthenticated = (Boolean) session.getAttribute(Constants.SESSION_ISAUTHENTICATED);
             if(username == null || isAuthenticated == null || !isAuthenticated){
-                return generateResponse(Response.Status.OK, Constants.RP_JSON_VALUE_FALSE_STRING);
+                return generateResponse(Response.Status.OK, "");
             }
-            return generateResponse(Response.Status.OK, Constants.RP_JSON_VALUE_TRUE_STRING);
+            return generateResponse(Response.Status.OK, username);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            WebauthnTutorialLogger.logp(Level.SEVERE, CLASSNAME, "isLoggedIn", "WEBAUTHN-WS-ERR-1000", ex.getLocalizedMessage());
+            return generateResponse(Response.Status.INTERNAL_SERVER_ERROR,
+                    WebauthnTutorialLogger.getMessageProperty("WEBAUTHN-WS-ERR-1000"));
+        }
+    }
+    
+    @POST
+    @Path("/" + Constants.RP_LOGOUT_PATH)
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response logout() {
+        try {
+            HttpSession session = request.getSession(false);
+            if (session == null) {
+                return generateResponse(Response.Status.OK, "");
+            }
+            session.invalidate();
+            return generateResponse(Response.Status.OK, "");
         } catch (Exception ex) {
             ex.printStackTrace();
             WebauthnTutorialLogger.logp(Level.SEVERE, CLASSNAME, "isLoggedIn", "WEBAUTHN-WS-ERR-1000", ex.getLocalizedMessage());
