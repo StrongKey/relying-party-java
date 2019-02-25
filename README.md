@@ -22,13 +22,13 @@ su strongkey
 cd /usr/local/strongkey
 ```
 
-3. Create the following directories to configure the webauthn servlet home directories.
+3. Create the following directories to configure the webauthn servlet home folder.
 
 ```sh
 mkdir -p /usr/local/strongkey/webauthntutorial/etc
 ```
 
-4. Create a configuration file for the relying party application.
+4. Create a configuration file for the relying party application to configure a FIDO server.
 
 ```sh
 vi /usr/local/strongkey/webauthntutorial/etc/webauthntutorial.properties
