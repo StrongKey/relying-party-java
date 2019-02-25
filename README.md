@@ -1,5 +1,5 @@
 # relying-party-java
-This project is a sample Relying Party (RP) Java Servlet written to work with the [StrongKey FIDO Server](https://github.com/StrongKey/FIDO-Server) and this [sample WebAuthn](https://github.com/StrongKey/WebAuthn).
+This project is a sample Relying Party (RP) Java Servlet written to work with the [StrongKey FIDO Server](https://github.com/StrongKey/FIDO-Server) and [sample WebAuthn](https://github.com/StrongKey/WebAuthn).
 
 
 #### Installation Instructions ####
