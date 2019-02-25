@@ -212,7 +212,7 @@ public class WebauthnService {
             // Verify user exists
             if(!userdatabase.doesUserExist(username)){
                 WebauthnTutorialLogger.logp(Level.SEVERE, CLASSNAME, "preauthenticate", "WEBAUTHN-WS-ERR-1002", username);
-                return generateResponse(Response.Status.CONFLICT, WebauthnTutorialLogger.getMessageProperty("WEBAUTHN-WS-ERR-1002"));
+                return generateResponse(Response.Status.NOT_FOUND, WebauthnTutorialLogger.getMessageProperty("WEBAUTHN-WS-ERR-1002"));
             }
 
             String preauth = SKFSClient.preauthenticate(username);
