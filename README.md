@@ -35,7 +35,7 @@ vi /usr/local/strongkey/webauthntutorial/etc/webauthntutorial.properties
 ```
 Add the following configuration to the file and replace the <FQDN> with the FIDO server FQDN.
 ```sh
-webauthntutorial.cfg.property.apiuri=https://<FQDN>.com:8181/api
+webauthntutorial.cfg.property.apiuri=https://<FQDN>:8181/api
 ```
 
 5.  Download the Relying Party war file [webauthntutorial.war](https://github.com/StrongKey/relying-party-java/blob/master/webauthntutorial.war).
