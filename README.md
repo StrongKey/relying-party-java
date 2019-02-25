@@ -22,13 +22,29 @@ su strongkey
 cd /usr/local/strongkey
 ```
 
-3.  Download the Relying Party war file [webauthntutorial.war](https://github.com/StrongKey/relying-party-java/blob/master/webauthntutorial.war).
+3. Create the following directories to configure the webauthn servlet home folder.
+
+```sh
+mkdir -p /usr/local/strongkey/webauthntutorial/etc
+```
+
+4. Create a configuration file for the relying party application to configure a FIDO server.
+
+```sh
+vi /usr/local/strongkey/webauthntutorial/etc/webauthntutorial.properties
+```
+Add the following configuration to the file and replace the <FQDN> with the FIDO server FQDN.
+```sh
+webauthntutorial.cfg.property.apiuri=https://<FQDN>:8181/api
+```
+
+5.  Download the Relying Party war file [webauthntutorial.war](https://github.com/StrongKey/relying-party-java/blob/master/webauthntutorial.war).
 
 ```sh
 wget https://github.com/StrongKey/relying-party-java/raw/master/webauthntutorial.war
 ```
 
-4. Add the war file to Payara 
+6. Add the war file to Payara 
 
 ```sh
 asadmin deploy webauthntutorial.war
@@ -36,13 +52,13 @@ asadmin deploy webauthntutorial.war
 
 (Note that the default admin username/password as set by the install script for the FIDO Server is admin/adminadmin.)
 
-5. Test that the servlet is running by running the following curl command and confirming that you get a HTTP 405 error.
+7. Test that the servlet is running by running the following curl command and confirming that you get a HTTP 405 error.
 
 ```sh
 curl -k https://localhost:8181/webauthntutorial/preregister
 ```
 
-6. For further testing, check out the sample [StrongKey WebAuthn client](https://github.com/StrongKey/WebAuthn).
+8. For further testing, check out the sample [StrongKey WebAuthn client](https://github.com/StrongKey/WebAuthn).
 
 
 If you would like to contribute to the [FIDO2 Relying Party](https://github.com/StrongKey/FIDO-Server) project, please read [CONTRIBUTING.md](https://github.com/StrongKey/relying-party-java/blob/master/CONTRIBUTING.md), then sign and return the [Contributor License Agreement (CLA)](https://cla-assistant.io/StrongKey/FIDO-Server).
