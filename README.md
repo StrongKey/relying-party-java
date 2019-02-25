@@ -67,7 +67,7 @@ curl -k https://localhost:8181/webauthntutorial/preregister
 If you would like to contribute to the [FIDO2 Relying Party](https://github.com/StrongKey/FIDO-Server) project, please read [CONTRIBUTING.md](https://github.com/StrongKey/relying-party-java/blob/master/CONTRIBUTING.md), then sign and return the [Contributor License Agreement (CLA)](https://cla-assistant.io/StrongKey/FIDO-Server).
 
 ## Other Samples
-* [WebAuthn](https://github.com/StrongKey/WebAuthn)&emdash;JavaScript sample
+* [WebAuthn](https://github.com/StrongKey/WebAuthn) - JavaScript sample
 
 ## Licensing
 This project is currently licensed under the [GNU Lesser General Public License v2.1](https://github.com/StrongKey/relying-party-java/blob/master/LICENSE).
