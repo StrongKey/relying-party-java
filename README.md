@@ -35,7 +35,7 @@ mkdir -p /usr/local/strongkey/webauthntutorial/etc
 vi /usr/local/strongkey/webauthntutorial/etc/webauthntutorial.properties
 ```
 
-5. Add the following configuration to the file and replace <FQDN> with the FIDO server FQDN.
+5. Add the following configuration to the file and replace &lt;FQDN&gt; with the FIDO server FQDN.
 
 ```sh
 webauthntutorial.cfg.property.apiuri=https://<FQDN>:8181/api
@@ -55,7 +55,7 @@ asadmin deploy webauthntutorial.war
 
 **NOTE: The default administrative username/password as set by the install script for the FIDO Server is _admin/adminadmin_.**
 
-8. Test that the servlet is running by executing the following curl command and confirming that you get a HTTP 405 error.
+8. Test that the servlet is running by executing the following Curl command and confirming that you get a HTTP 405 error.
 
 ```sh
 curl -k https://localhost:8181/webauthntutorial/preregister
