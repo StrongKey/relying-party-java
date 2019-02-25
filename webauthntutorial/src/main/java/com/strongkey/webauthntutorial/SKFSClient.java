@@ -113,9 +113,7 @@ public class SKFSClient {
                 .add(Constants.SKFS_JSON_KEY_USERNAME, username)
                 .add(Constants.SKFS_JSON_KEY_DISPLAYNAME, displayName);
         JsonObject options = getRegOptions();
-        if(!options.isEmpty()){
-            bodyBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS, options.toString());
-        }
+        bodyBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS, options.toString());
         return callSKFSRestApi(
                 SKFSFIDOKEYURI + "/" + Constants.SKFS_PATH_CHALLENGE,
                 bodyBuilder.build().toString(),
@@ -171,9 +169,7 @@ public class SKFSClient {
                 .add(Constants.SKFS_JSON_KEY_PROTOCOL, PROTOCOL)
                 .add(Constants.SKFS_JSON_KEY_USERNAME, username);
         JsonObject options = getAuthOptions();
-        if (!options.isEmpty()) {
-            bodyBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS, options.toString());
-        }
+        bodyBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS, options.toString());
         return callSKFSRestApi(
                 SKFSFIDOKEYURI + "/" + Constants.SKFS_PATH_AUTHENTICATE + "/" + Constants.SKFS_PATH_CHALLENGE,
                 bodyBuilder.build().toString(),
