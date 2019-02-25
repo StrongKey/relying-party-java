@@ -1,6 +1,6 @@
 # Contributing to StrongKey's FIDO2 Server
 
-We welcome contributions to this open-source FIDO2 Server relying party! This guide provides some tips for successful contributions.
+We welcome contributions to this open-source FIDO2 Server Relying Party (RP)! This guide provides some tips for successful contributions.
 
 For some background on WebAuthn/FIDO2 and its backers, visit the [FIDO2 Project](https://fidoalliance.org/fido2/). 
 
@@ -28,7 +28,7 @@ We use GitHub [Issues](https://github.com/StrongKey/relying-party-java/issues) t
 
 ### Did you discover a bug?
 
-Do not open up a GitHub Issue if the bug is a security vulnerability in FIDO CES, and instead to refer to our security policy.
+Do not open up a GitHub Issue if the bug is a security vulnerability in FIDO2 Server, and instead to refer to our security policy.
 
 Ensure the bug was not already reported by searching on GitHub Issues.
 
