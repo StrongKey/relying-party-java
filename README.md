@@ -10,7 +10,7 @@ This project is a sample Relying Party Java Servlet written to work with the [St
 - You must have a Java Application Server. These instructions assume you are using Payara (GlassFish).
 - **The sample commands below assume you are installing this RP on the same server as you have previously installed the [StrongKey FIDO Server](https://github.com/StrongKey/FIDO-Server).** If you are installing on a separate server, you may have to adjust the commands accordingly.
 
-1. Login as the strongkey user
+1. Switch to (or login as) the strongkey user
 
 ```sh
 su strongkey
