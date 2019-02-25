@@ -17,7 +17,7 @@ This project is a sample Relying Party (RP) Java Servlet written to work with th
 su strongkey
 ```
 
-2. Change Directory to _/usr/local/strongkey_ (the home directory for the _strongkey_ user).
+2. Change directory to _/usr/local/strongkey_ (the home directory for the _strongkey_ user).
 
 ```sh
 cd /usr/local/strongkey
