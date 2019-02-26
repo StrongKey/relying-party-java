@@ -1,5 +1,5 @@
 # relying-party-java
-This project is a sample Relying Party (RP) Java Servlet written to work with StrongKey's [FIDO Server, Community Edition](https://github.com/StrongKey/FIDO-Server) and [sample WebAuthn](https://github.com/StrongKey/WebAuthn). Relying Parties provide identity verification that allows passwordless authentication. Follow the instructions below to create your own instance of the sample Relying Party, and enable passwordless application access for your own creations.
+This project is a sample Relying Party (RP) Java Servlet written to work with StrongKey's [FIDO Server, Community Edition](https://github.com/StrongKey/FIDO-Server) and [sample WebAuthn](https://github.com/StrongKey/WebAuthn). Relying Parties provide the identity verification that allows passwordless authentication. Follow the instructions below to create your own instance of the sample Relying Party, and enable passwordless application access for your own creations.
 
 Find out more about Relying Party servers [here](https://en.wikipedia.org/wiki/Relying_party).
 
