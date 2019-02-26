@@ -3,7 +3,7 @@ This project is a sample WebAuthn Relying Party (shortened herein to Relying Par
 
 StrongKey sample Relying Party utilizes the sample WebAuthn API to register and authenticate users. Follow the instructions below to create your own instance of the sample Relying Party, and enable passwordless application access for your own creations. Find out more about Relying Parties by visiting the following links:
 
-- [Relying Party servers](https://en.wikipedia.org/wiki/Relying_party) in general
+- [Relying Party](https://en.wikipedia.org/wiki/Relying_party) in general
 - [WebAuthn Relying Party Operations](https://www.w3.org/TR/webauthn/#rp-operations)
 
 ## Prerequisites
