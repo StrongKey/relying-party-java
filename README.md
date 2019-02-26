@@ -1,7 +1,7 @@
 # relying-party-java
 This project is a sample WebAuthn Relying Party (shortened herein to Relying Party, or RP) Java Servlet written to work with StrongKey's [FIDO Server, Community Edition](https://github.com/StrongKey/FIDO-Server) and [sample WebAuthn](https://github.com/StrongKey/WebAuthn). 
 
-A Relying Party utilizes the Web Authentication API to register and authenticate users. Follow the instructions below to create your own instance of the sample Relying Party, and enable passwordless application access for your own creations. Find out more about Relying Parties by visiting the following links:
+StrongKey sample Relying Party utilizes the sample WebAuthn API to register and authenticate users. Follow the instructions below to create your own instance of the sample Relying Party, and enable passwordless application access for your own creations. Find out more about Relying Parties by visiting the following links:
 
 - [Relying Party servers](https://en.wikipedia.org/wiki/Relying_party) in general
 - [WebAuthn Relying Party Operations](https://www.w3.org/TR/webauthn/#rp-operations)
@@ -11,7 +11,7 @@ A Relying Party utilizes the Web Authentication API to register and authenticate
 - This Relying Party example must have a means of connecting with a StrongKey FIDO Server. You can install a FIDO Server either on the same server as your RP or a different server.
 - You must have a Java Application Server. These instructions assume you are using Payara (GlassFish).
 - The instructions assume the default ports for all the applications installed; Payara runs HTTPS on port 8181 by default, so make sure all firewall rules allow that port to be accessible.
-- **The sample commands below assume you are installing this RP on the same server where StrongKey FIDO Server and sample WebAuthn previously installed.** If you are installing on a separate server, you may have to adjust the commands accordingly.
+- **The sample commands below assume you are installing this RP on the same server where StrongKey FIDO Server and sample WebAuthn have been previously installed.** If you are installing on a separate server, you may have to adjust the commands accordingly.
 
 ## Installation Instructions
 
