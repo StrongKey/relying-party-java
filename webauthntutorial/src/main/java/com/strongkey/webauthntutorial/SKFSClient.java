@@ -139,7 +139,7 @@ public class SKFSClient {
                 regOptionBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS_ATTACHMENT, authSelect);
             }
             if(ATTESTATION != null){
-                regOptionBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS_USERVERIFICATION, ATTESTATION);
+                regOptionBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS_ATTESTATION, ATTESTATION);
             }
             regOptions = regOptionBuilder.build();
         }
