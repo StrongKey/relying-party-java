@@ -3,6 +3,10 @@ This project is a sample WebAuthn Relying Party (shortened herein to Relying Par
 
 The goals of this project are to demonstrate how to call StrongKey's FIDO2 APIs and how to properly manage users' FIDO keys. It is meant to serve as a reference implementation of a project that leverages StrongKey's FIDO server to enable FIDO authentication. *If you are an application developer looking to FIDO enable their application, look at this code.*
 
+For additional information on WebAuth Relying Parties, visit the technical specification:
+- [Definition of WebAuthn Relying Party](https://www.w3.org/TR/webauthn/#webauthn-relying-party)
+- [Complete WebAuthn Specification](https://www.w3.org/TR/webauthn)
+
 Follow the instructions below to run this code.
 
 ## Prerequisites
