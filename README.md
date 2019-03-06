@@ -21,40 +21,34 @@ Follow the instructions below to install this sample.
 1. Switch to (or login as) the _strongkey_ user. The default password for the _strongkey_ user is _ShaZam123_.
 
     ```sh
-    su strongkey
+    su - strongkey
     ```
 
-2. Change directory to _/usr/local/strongkey_ (the home directory for the _strongkey_ user).
-
-    ```sh
-    cd /usr/local/strongkey
-    ```
-
-3. Create the following directories to configure the WebAuthn servlet home folder.
+2. Create the following directories to configure the WebAuthn servlet home folder.
 
     ```sh
     mkdir -p /usr/local/strongkey/webauthntutorial/etc
     ```
 
-4. Create a configuration file for the Relying Party application to configure a FIDO server.
+3. Create a configuration file for the Relying Party application to configure a FIDO server.
 
     ```sh
     vi /usr/local/strongkey/webauthntutorial/etc/webauthntutorial.properties
     ```
 
-5. Add the following configuration to the file and replace &lt;FQDN&gt; with the FIDO server FQDN.
+4. Add the following configuration to the file and replace &lt;FQDN&gt; with the FIDO server FQDN.
 
     ```sh
     webauthntutorial.cfg.property.apiuri=https://<FQDN>:8181/api
     ```
 
-6. Download the Relying Party .war file [webauthntutorial.war](https://github.com/StrongKey/relying-party-java/blob/master/webauthntutorial.war).
+5. Download the Relying Party .war file [webauthntutorial.war](https://github.com/StrongKey/relying-party-java/blob/master/webauthntutorial.war).
 
     ```sh
     wget https://github.com/StrongKey/relying-party-java/raw/master/webauthntutorial.war
     ```
 
-7. Add the .war file to Payara.
+6. Add the .war file to Payara.
 
     ```sh
     asadmin deploy webauthntutorial.war
@@ -62,13 +56,13 @@ Follow the instructions below to install this sample.
 
     **NOTE: The default administrative username/password as set by the install script for the FIDO Server is _admin/adminadmin_.**
 
-8. Test that the servlet is running by executing the following Curl command and confirming that you get an HTTP 405 error.
+7. Test that the servlet is running by executing the following Curl command and confirming that you get an HTTP 405 error.
 
     ```sh
     curl -k https://localhost:8181/webauthntutorial/preregister
     ```
 
-9. For further testing, check out the sample [StrongKey WebAuthn client](https://github.com/StrongKey/WebAuthn).
+8. For further testing, check out the sample [StrongKey WebAuthn client](https://github.com/StrongKey/WebAuthn).
 
 ## Contributing to the Sample Relying Party
 
