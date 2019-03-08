@@ -54,7 +54,8 @@ public class Constants {
     public static final String SKFS_PATH_DOMAINS = "domains";
     public static final String SKFS_PATH_FIDOKEYS = "fidokeys";
     public static final String SKFS_PATH_CHALLENGE = "challenge";
-    public static final String SKFS_PATH_AUTHENTICATE = "authenticate";
+    public static final String SKFS_PATH_REGISTRATION = "registration";
+    public static final String SKFS_PATH_AUTHENTICATION = "authentication";
     
     // Session Information
     public static final String SESSION_USERNAME = "username";

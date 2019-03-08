@@ -115,7 +115,7 @@ public class SKFSClient {
         JsonObject options = getRegOptions();
         bodyBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS, options.toString());
         return callSKFSRestApi(
-                SKFSFIDOKEYURI + "/" + Constants.SKFS_PATH_CHALLENGE,
+                SKFSFIDOKEYURI + "/" + Constants.SKFS_PATH_REGISTRATION + "/" + Constants.SKFS_PATH_CHALLENGE,
                 bodyBuilder.build().toString(),
                 HttpMethod.POST);
     }
@@ -159,7 +159,7 @@ public class SKFSClient {
                 .add(Constants.SKFS_JSON_KEY_METADATA, metadata.toString())
                 .build().toString();
         return callSKFSRestApi(
-                SKFSFIDOKEYURI,
+                SKFSFIDOKEYURI + "/" + Constants.SKFS_PATH_REGISTRATION,
                 body,
                 HttpMethod.POST);
     }
@@ -171,7 +171,7 @@ public class SKFSClient {
         JsonObject options = getAuthOptions();
         bodyBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS, options.toString());
         return callSKFSRestApi(
-                SKFSFIDOKEYURI + "/" + Constants.SKFS_PATH_AUTHENTICATE + "/" + Constants.SKFS_PATH_CHALLENGE,
+                SKFSFIDOKEYURI + "/" + Constants.SKFS_PATH_AUTHENTICATION + "/" + Constants.SKFS_PATH_CHALLENGE,
                 bodyBuilder.build().toString(),
                 HttpMethod.POST);
     }
@@ -201,7 +201,7 @@ public class SKFSClient {
                 .add(Constants.SKFS_JSON_KEY_METADATA, metadata.toString())
                 .build().toString();
         return callSKFSRestApi(
-                SKFSFIDOKEYURI + "/" + Constants.SKFS_PATH_AUTHENTICATE,
+                SKFSFIDOKEYURI + "/" + Constants.SKFS_PATH_AUTHENTICATION,
                 body,
                 HttpMethod.POST);
     }
