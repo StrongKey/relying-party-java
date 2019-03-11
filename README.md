@@ -10,7 +10,7 @@ The cybersecurity term, "Relying Party," originating from the jurisprudential te
 
 For more information on the originating jargon and related terms, visit the Internet Engineering Task Force (IETF) Request for Comments (RFC):
 
-- [Relying Party](https://tools.ietf.org/html/rfc3647#section-1.1)
+- The definition of Relying Party is in the [second paragraph of 1.1. Background](https://tools.ietf.org/html/rfc3647#section-1.1)
 
 Follow the instructions below to install this sample.
 
