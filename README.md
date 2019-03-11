@@ -11,10 +11,10 @@ Follow the instructions below to install this sample.
 
 ## Prerequisites
 
-- This Relying Party web application example must have a means of connecting with a StrongKey FIDO2 Server. You can install a FIDO2 Server either on the same server as your RP web application or a different server.
-- You must have a Java Application Server. These instructions assume you are using Payara (GlassFish).
+- This Relying Party web application example must have a means of connecting with a StrongKey FIDO2 Server. You can install a FIDO2 Server either on the same machine as your RP web application or a different one.
+- You must have a Java Application web server. These instructions assume you are using Payara (GlassFish).
 - The instructions assume the default ports for all the applications installed; Payara runs HTTPS on port 8181 by default, so make sure all firewall rules allow that port to be accessible.
-- **The sample commands below assume you are installing this RP web application on the same server where StrongKey FIDO2 Server has been installed.** If you are installing on a separate server, you may have to adjust the commands accordingly.
+- **The sample commands below assume you are installing this RP web application on the same machine where StrongKey FIDO2 Server has been installed.** If you are installing on a separate machine, you may have to adjust the commands accordingly.
 
 ## Installation Instructions
 
