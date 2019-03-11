@@ -11,10 +11,10 @@ Follow the instructions below to install this sample.
 
 ## Prerequisites
 
-- This Relying Party example must have a means of connecting with a StrongKey FIDO2 Server. You can install a FIDO2 Server either on the same server as your RP or a different server.
+- This Relying Party web application example must have a means of connecting with a StrongKey FIDO2 Server. You can install a FIDO2 Server either on the same server as your RP web application or a different server.
 - You must have a Java Application Server. These instructions assume you are using Payara (GlassFish).
 - The instructions assume the default ports for all the applications installed; Payara runs HTTPS on port 8181 by default, so make sure all firewall rules allow that port to be accessible.
-- **The sample commands below assume you are installing this RP on the same server where StrongKey FIDO2 Server has been installed.** If you are installing on a separate server, you may have to adjust the commands accordingly.
+- **The sample commands below assume you are installing this RP web application on the same server where StrongKey FIDO2 Server has been installed.** If you are installing on a separate server, you may have to adjust the commands accordingly.
 
 ## Installation Instructions
 
@@ -30,7 +30,7 @@ Follow the instructions below to install this sample.
     mkdir -p /usr/local/strongkey/webauthntutorial/etc
     ```
 
-3. Create a configuration file for the Relying Party application to configure a FIDO2 server.
+3. Create a configuration file for the Relying Party web application to configure a FIDO2 server.
 
     ```sh
     vi /usr/local/strongkey/webauthntutorial/etc/webauthntutorial.properties
@@ -42,7 +42,7 @@ Follow the instructions below to install this sample.
     webauthntutorial.cfg.property.apiuri=https://<FQDN>:8181/api
     ```
 
-5. Download the Relying Party .war file [webauthntutorial.war](https://github.com/StrongKey/relying-party-java/blob/master/webauthntutorial.war).
+5. Download the Relying Party web application .war file [webauthntutorial.war](https://github.com/StrongKey/relying-party-java/blob/master/webauthntutorial.war).
 
     ```sh
     wget https://github.com/StrongKey/relying-party-java/raw/master/webauthntutorial.war
@@ -64,9 +64,9 @@ Follow the instructions below to install this sample.
 
 8. For further testing, check out the sample [StrongKey WebAuthn client](https://github.com/StrongKey/WebAuthn).
 
-## Contributing to the Sample Relying Party
+## Contributing to the Sample Relying Party Web Application 
 
-If you would like to contribute to the sample Relying Party project, please read [CONTRIBUTING.md](https://github.com/StrongKey/relying-party-java/blob/master/CONTRIBUTING.md), then sign and return the [Contributor License Agreement (CLA)](https://cla-assistant.io/StrongKey/FIDO-Server).
+If you would like to contribute to the sample Relying Party web application project, please read [CONTRIBUTING.md](https://github.com/StrongKey/relying-party-java/blob/master/CONTRIBUTING.md), then sign and return the [Contributor License Agreement (CLA)](https://cla-assistant.io/StrongKey/FIDO-Server).
 
 ## Licensing
 This project is currently licensed under the [GNU Lesser General Public License v2.1](https://github.com/StrongKey/relying-party-java/blob/master/LICENSE).
