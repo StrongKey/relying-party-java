@@ -1,7 +1,7 @@
 # relying-party-java
-This project is a sample WebAuthn Relying Party (shortened herein to Relying Party, or RP) web application written in Java to work with StrongKey's [FIDO Server, Community Edition](https://github.com/StrongKey/FIDO-Server) and sample [JavaScript WebAuthn client](https://github.com/StrongKey/WebAuthn).
+This project is a sample WebAuthn Relying Party (shortened herein to Relying Party, or RP) web application written in Java to work with StrongKey's [FIDO2 Server, Community Edition](https://github.com/StrongKey/FIDO-Server) and sample [JavaScript WebAuthn client](https://github.com/StrongKey/WebAuthn).
 
-The goals of this project are to demonstrate how to call StrongKey's FIDO Server APIs and how to properly manage users' FIDO keys. It is meant to serve as a reference implementation of a project that leverages StrongKey's FIDO Server to enable FIDO authentication. **If you are an application developer looking to FIDO-enable an application, look at this code.**
+The goals of this project are to demonstrate how to call StrongKey's FIDO Server APIs and how to properly manage users' FIDO2 keys. It is meant to serve as a reference implementation of a project that leverages StrongKey's FIDO2 Server to enable FIDO2 authentication. **If you are an application developer looking to FIDO2-enable an application, look at this code.**
 
 For additional information on WebAuthn Relying Parties, visit the technical specification:
 - [Definition of WebAuthn Relying Party](https://www.w3.org/TR/webauthn/#webauthn-relying-party)
@@ -11,7 +11,7 @@ Follow the instructions below to install this sample.
 
 ## Prerequisites
 
-- This Relying Party example must have a means of connecting with a StrongKey FIDO Server. You can install a FIDO Server either on the same server as your RP or a different server.
+- This Relying Party example must have a means of connecting with a StrongKey FIDO2 Server. You can install a FIDO2 Server either on the same server as your RP or a different server.
 - You must have a Java Application Server. These instructions assume you are using Payara (GlassFish).
 - The instructions assume the default ports for all the applications installed; Payara runs HTTPS on port 8181 by default, so make sure all firewall rules allow that port to be accessible.
 - **The sample commands below assume you are installing this RP on the same server where StrongKey FIDO Server has been installed.** If you are installing on a separate server, you may have to adjust the commands accordingly.
@@ -30,13 +30,13 @@ Follow the instructions below to install this sample.
     mkdir -p /usr/local/strongkey/webauthntutorial/etc
     ```
 
-3. Create a configuration file for the Relying Party application to configure a FIDO server.
+3. Create a configuration file for the Relying Party application to configure a FIDO2 server.
 
     ```sh
     vi /usr/local/strongkey/webauthntutorial/etc/webauthntutorial.properties
     ```
 
-4. Add the following configuration to the file and replace &lt;FQDN&gt; with the FIDO server FQDN.
+4. Add the following configuration to the file and replace &lt;FQDN&gt; with the FIDO2 server FQDN.
 
     ```sh
     webauthntutorial.cfg.property.apiuri=https://<FQDN>:8181/api
