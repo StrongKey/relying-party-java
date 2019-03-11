@@ -8,10 +8,9 @@ The cybersecurity term, "Relying Party," originating from the jurisprudential te
 - [Definition of WebAuthn Relying Party](https://www.w3.org/TR/webauthn/#webauthn-relying-party)
 - [Complete WebAuthn Specification](https://www.w3.org/TR/webauthn)
 
-For more information on the originating jargon and related terms:
+For more information on the originating jargon and related terms, visit the Internet Engineering Task Force (IETF) Request for Comments (RFC):
 
-- [Relying Party](https://ldapwiki.com/wiki/Relying%20Party)
-- [Entity](https://ldapwiki.com/wiki/Entity)
+- [Relying Party](https://tools.ietf.org/html/rfc3647#section-1.1)
 
 Follow the instructions below to install this sample.
 
