@@ -72,7 +72,7 @@ Follow the instructions below to install this sample.
 
 ## Removal
 
-To uninstall the RP sample web application, follow the uninstall instructions in the [FIDO2 Server, Community Edition Installation Guide](https://github.com/StrongKey/FIDO-Server/blob/master/docs/Installation_Guide_Linux.md#removal). Removing the StrongKey FIDO Server also removes the RP web application and WebAuthn client.
+To uninstall the RP sample web application, follow the uninstall instructions in the [FIDO2 Server, Community Edition Installation Guide](https://github.com/StrongKey/FIDO-Server/blob/master/docs/Installation_Guide_Linux.md#removal). Removing the StrongKey FIDO Server also removes the sample RP web application and sample WebAuthn client.
 
 ## Contributing to the Sample Relying Party Web Application 
 
