@@ -1,6 +1,6 @@
 # Contributing to StrongKey's FIDO Server
 
-We welcome contributions to this open-source FIDO Server Relying Party (RP)! This guide provides some tips for successful contributions.
+We welcome contributions to this open-source FIDO Server Relying Party (RP) web application! This guide provides some tips for successful contributions.
 
 For some background on WebAuthn/FIDO2 and its backers, visit the [FIDO2 Project](https://fidoalliance.org/fido2/). 
 
