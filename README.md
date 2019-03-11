@@ -70,6 +70,10 @@ Follow the instructions below to install this sample.
 
 8. To test this installation of the FIDO2 server, check out the sample [StrongKey WebAuthn client](https://github.com/StrongKey/WebAuthn).
 
+## Removal
+
+To uninstall the RP sample web application, follow the uninstall instructions in the [FIDO2 Server, Community Edition Installation Guide](https://github.com/StrongKey/FIDO-Server/blob/master/docs/Installation_Guide_Linux.md#removal). Removing the StrongKey FIDO Server also removes the RP web application and WebAuthn client.
+
 ## Contributing to the Sample Relying Party Web Application 
 
 If you would like to contribute to the sample Relying Party web application project, please read [CONTRIBUTING.md](https://github.com/StrongKey/relying-party-java/blob/master/CONTRIBUTING.md), then sign and return the [Contributor License Agreement (CLA)](https://cla-assistant.io/StrongKey/FIDO-Server).
