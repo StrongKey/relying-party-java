@@ -62,13 +62,13 @@ Follow the instructions below to install this sample.
 
     **NOTE: The default administrative username/password as set by the install script for the FIDO2 Server is _admin/adminadmin_.**
 
-7. Test that the servlet is running by executing the following Curl command and confirming that you get an HTTP 405 error.
+7. Test that the servlet is running by executing the following Curl command.  You should get the API Web Application Definition Language (WADL) file back in response.
 
     ```sh
-    curl -k https://localhost:8181/webauthntutorial/preregister
+    curl -k https://localhost:8181/webauthntutorial/application.wadl
     ```
 
-8. For further testing, check out the sample [StrongKey WebAuthn client](https://github.com/StrongKey/WebAuthn).
+8. To test this installation of the FIDO2 server, check out the sample [StrongKey WebAuthn client](https://github.com/StrongKey/WebAuthn).
 
 ## Contributing to the Sample Relying Party Web Application 
 
