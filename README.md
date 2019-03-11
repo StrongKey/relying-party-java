@@ -30,13 +30,13 @@ Follow the instructions below to install this sample.
     mkdir -p /usr/local/strongkey/webauthntutorial/etc
     ```
 
-3. Create a configuration file for the Relying Party web application to configure a FIDO2 server.
+3. Create a configuration file for the Relying Party web application to configure a FIDO2 Server.
 
     ```sh
     vi /usr/local/strongkey/webauthntutorial/etc/webauthntutorial.properties
     ```
 
-4. Add the following configuration to the file and replace &lt;FQDN&gt; with the FIDO2 server FQDN.
+4. Add the following configuration to the file and replace &lt;FQDN&gt; with the FIDO2 Server FQDN.
 
     ```sh
     webauthntutorial.cfg.property.apiuri=https://<FQDN>:8181/api
