@@ -54,7 +54,7 @@ Follow the instructions below to install this sample.
     asadmin deploy webauthntutorial.war
     ```
 
-    **NOTE: The default administrative username/password as set by the install script for the FIDO Server is _admin/adminadmin_.**
+    **NOTE: The default administrative username/password as set by the install script for the FIDO2 Server is _admin/adminadmin_.**
 
 7. Test that the servlet is running by executing the following Curl command and confirming that you get an HTTP 405 error.
 
