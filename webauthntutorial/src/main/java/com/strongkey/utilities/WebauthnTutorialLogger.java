@@ -13,8 +13,7 @@ import java.util.ResourceBundle;
 // Provides basic logging functionality
 public class WebauthnTutorialLogger {
     // Logger for the application
-    private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger("WEBAUTHNTUTORIAL", "resources.webauthntutorial-messages_"
-            + Locale.getDefault());
+    private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger("WEBAUTHNTUTORIAL", "resources.webauthntutorial-messages");
     
     // Load messages for Exceptions
     private static final ResourceBundle MESSAGEBUNDLE = ResourceBundle.getBundle("resources.webauthntutorial-messages", Locale.getDefault());
