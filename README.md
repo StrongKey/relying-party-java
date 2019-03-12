@@ -6,7 +6,8 @@ The goals of this project are to demonstrate how to call StrongKey's FIDO2 Serve
 The cybersecurity term, "Relying Party," originating from the jurisprudential term, was intended to represent legal entities that have a standing within a court of law where disputes related to digital signatures and non-repudiation could be argued; *a web application has no legal standing in court, but its owner does*. For additional information on WebAuthn Relying Parties, visit the technical specification:
 
 - [Definition of WebAuthn Relying Party](https://www.w3.org/TR/webauthn/#webauthn-relying-party)
-- [Complete WebAuthn Specification](https://www.w3.org/TR/webauthn)
+- [Complete WebAuthn specification](https://www.w3.org/TR/webauthn)
+- [A useful diagram of WebAuthn functional flow](https://www.w3.org/TR/webauthn/#api)
 
 For more information on the originating jargon and related terms, visit the Internet Engineering Task Force (IETF) Request for Comments (RFC):
 
