@@ -1,7 +1,7 @@
 # relying-party-java
 This project is a sample WebAuthn Relying Party (shortened herein to Relying Party, or RP) web application written in Java to work with StrongKey's [FIDO2 Server, Community Edition](https://github.com/StrongKey/FIDO-Server) and sample [JavaScript WebAuthn client](https://github.com/StrongKey/WebAuthn).
 
-The goals of this project are to demonstrate how to call StrongKey's FIDO2 Server APIs and how to properly manage users' FIDO2 keys. It is meant to serve as a reference implementation of a project that leverages StrongKey's FIDO2 Server to enable FIDO2 authentication. **If you are an application developer looking to FIDO2-enable an application, look at this code.**
+The goals of this project are to demonstrate how to call StrongKey's FIDO2 Server APIs and how to properly manage users' FIDO2 keys. It is meant to serve as a reference implementation of a project that leverages StrongKey's FIDO2 Server to enable FIDO2 authentication. **If you are an application developer looking to FIDO2-enable an application, this code uses examples of the FIDO2 API calls.**
 
 The cybersecurity term, "Relying Party," originating from the jurisprudential term, was intended to represent legal entities that have a standing within a court of law where disputes related to digital signatures and non-repudiation could be argued; *a web application has no legal standing in court, but its owner does*. For additional information on WebAuthn Relying Parties, visit the technical specification:
 
