@@ -1,36 +1,8 @@
-/*
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License, as published by the Free Software Foundation and
- * available at http://www.fsf.org/licensing/licenses/lgpl.html,
- * version 2.1 or above.
+/**
+ * Copyright StrongAuth, Inc. All Rights Reserved.
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- *
- * Copyright (c) 2001-2019 StrongAuth, Inc.
- *
- * $Date: 
- * $Revision:
- * $Author: mishimoto $
- * $URL: 
- *
- * *********************************************
- *                    888
- *                    888
- *                    888
- *  88888b.   .d88b.  888888  .d88b.  .d8888b
- *  888 "88b d88""88b 888    d8P  Y8b 88K
- *  888  888 888  888 888    88888888 "Y8888b.
- *  888  888 Y88..88P Y88b.  Y8b.          X88
- *  888  888  "Y88P"   "Y888  "Y8888   88888P'
- *
- * *********************************************
- * 
- * EJB that handles access to the Users "database".
- *
+ * Use of this source code is governed by the Gnu Lesser General Public License 2.3.
+ * The license can be found at https://github.com/StrongKey/relying-party-java/LICENSE
  */
 
 package com.strongkey.database;
@@ -39,18 +11,24 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.ejb.Singleton;
 
+// A mock database for "user accounts". It is expected that RPs will have their
+// own concept of what a "user" means in their application and will need to
+// create similar functionality according to their use cases.
 @Singleton
 public class UserDatabase {
     private final Set<String> users = new HashSet();
     
+    // Checks if a user exists in the "database"
     public synchronized boolean doesUserExist(String username){
         return users.contains(username);
     }
     
+    // Adds a user to the "database"
     public synchronized void addUser(String username){
         users.add(username);
     }
     
+    // Removes a user from the "database"
     public synchronized void deleteUser(String username) {
         users.remove(username);
     }

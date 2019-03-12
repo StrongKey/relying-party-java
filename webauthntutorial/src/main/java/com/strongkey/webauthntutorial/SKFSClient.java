@@ -1,37 +1,8 @@
-/*
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License, as published by the Free Software Foundation and
- * available at http://www.fsf.org/licensing/licenses/lgpl.html,
- * version 2.1 or above.
+/**
+ * Copyright StrongAuth, Inc. All Rights Reserved.
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- *
- * Copyright (c) 2001-2019 StrongAuth, Inc.
- *
- * $Date: 
- * $Revision:
- * $Author: mishimoto $
- * $URL: 
- *
- * *********************************************
- *                    888
- *                    888
- *                    888
- *  88888b.   .d88b.  888888  .d88b.  .d8888b
- *  888 "88b d88""88b 888    d8P  Y8b 88K
- *  888  888 888  888 888    88888888 "Y8888b.
- *  888  888 Y88..88P Y88b.  Y8b.          X88
- *  888  888  "Y88P"   "Y888  "Y8888   88888P'
- *
- * *********************************************
- * 
- * Call the StrongKey Fido Engine (SKFS) via REST API to handle Webauthn/FIDO2
- * key management.
- *
+ * Use of this source code is governed by the Gnu Lesser General Public License 2.3.
+ * The license can be found at https://github.com/StrongKey/relying-party-java/LICENSE
  */
 
 package com.strongkey.webauthntutorial;
@@ -41,8 +12,6 @@ import com.strongkey.utilities.Constants;
 import com.strongkey.utilities.WebauthnTutorialLogger;
 import java.io.IOException;
 import java.io.StringReader;
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -50,7 +19,6 @@ import java.text.SimpleDateFormat;
 import java.util.Base64;
 import java.util.Date;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.json.Json;
@@ -74,9 +42,12 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
+//  Call the StrongKey Fido Engine (SKFS) via REST API to handle Webauthn/FIDO2
+//  key management.
 public class SKFSClient {
     private static final String CLASSNAME = SKFSClient.class.getName();
 
+    // StrongKey API information
     private static final String SKFSDID
             = Configurations.getConfigurationProperty("webauthntutorial.cfg.property.did");
     private static final String ACCESSKEY
@@ -107,6 +78,7 @@ public class SKFSClient {
     private static JsonObject regOptions = null;
     private static JsonObject authOptions = null;
     
+    // Request a registration challenge from the SKFS for a user
     public static String preregister(String username, String displayName) {
         JsonObjectBuilder bodyBuilder = Json.createObjectBuilder()
                 .add(Constants.SKFS_JSON_KEY_PROTOCOL, PROTOCOL)
@@ -120,6 +92,7 @@ public class SKFSClient {
                 HttpMethod.POST);
     }
     
+    // Set authenticator registration preferences from properties.
     private static JsonObject getRegOptions(){
         // Construct Option Json if it has not already been parsed together
         if(regOptions == null){
@@ -146,6 +119,7 @@ public class SKFSClient {
         return regOptions;
     }
     
+    // Return a signed registration challenge to the SKFS
     public static String register(String username, String origin, JsonObject signedResponse) {
         JsonObject metadata = Json.createObjectBuilder()
                 .add(Constants.SKFS_JSON_KEY_VERSION, PROTOCOL_VERSION)
@@ -164,6 +138,7 @@ public class SKFSClient {
                 HttpMethod.POST);
     }
     
+    // Request an authentication challenge from the SKFS for a user
     public static String preauthenticate(String username) {
         JsonObjectBuilder bodyBuilder = Json.createObjectBuilder()
                 .add(Constants.SKFS_JSON_KEY_PROTOCOL, PROTOCOL)
@@ -176,6 +151,7 @@ public class SKFSClient {
                 HttpMethod.POST);
     }
     
+    // Set a preference for "user verification" on authentication.
     private static JsonObject getAuthOptions() {
         // Construct Option Json if it has not already been parsed together
         if (authOptions == null) {
@@ -188,6 +164,7 @@ public class SKFSClient {
         return authOptions;
     }
     
+    // Return a signed authentication challenge to the SKFS
     public static String authenticate(String username, String origin, JsonObject signedResponse) {
         JsonObject metadata = Json.createObjectBuilder()
                 .add(Constants.SKFS_JSON_KEY_VERSION, PROTOCOL_VERSION)
@@ -206,6 +183,7 @@ public class SKFSClient {
                 HttpMethod.POST);
     }
     
+    // Request for all keys associated with a user
     public static String getKeys(String username) {
         return callSKFSRestApi(
                 SKFSFIDOKEYURI + "?" + Constants.SKFS_QUERY_KEY_USERNAME + username, 
@@ -213,6 +191,7 @@ public class SKFSClient {
                 HttpMethod.GET);
     }
     
+    // Delete a user's key
     public static String deregisterKey(String keyid) {
         return callSKFSRestApi(
                 SKFSFIDOKEYURI + "/" + keyid,
@@ -220,6 +199,7 @@ public class SKFSClient {
                 HttpMethod.DELETE);
     }
     
+    // Format HTTP request for resource
     private static String callSKFSRestApi(String requestURI, String body, String method){
         HttpRequestBase request;
         switch(method){
@@ -237,7 +217,6 @@ public class SKFSClient {
                         "WEBAUTHN-ERR-5001", "Invalid HTTP Method");
                 throw new WebServiceException(WebauthnTutorialLogger.getMessageProperty("WEBAUTHN-ERR-5001"));
         }
-        System.out.println(body);
         String contentType = MediaType.APPLICATION_JSON;
         String apiVersion = "2.0";
         String currentDate = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss z").format(new Date());
@@ -262,6 +241,7 @@ public class SKFSClient {
         return callServer(request);
     }
     
+    // Send HTTP request
     private static String callServer(HttpRequestBase request){
         try(CloseableHttpClient httpclient = HttpClients.createDefault()){
             System.out.println(request);
@@ -274,6 +254,7 @@ public class SKFSClient {
         }
     }
     
+    // Verify that SKFS send back a "success"
     private static String getAndVerifySuccessfulResponse(HttpResponse skfsResponse){
         try {
             String responseJsonString = EntityUtils.toString(skfsResponse.getEntity());
@@ -294,6 +275,7 @@ public class SKFSClient {
         }
     }
     
+    // Verify that SKFE response is the proper format
     private static void verifyJson(String responseJsonString){
         System.out.println(responseJsonString);
         try (JsonReader jsonReader = Json.createReader(new StringReader(responseJsonString))) {
@@ -306,6 +288,7 @@ public class SKFSClient {
         }
     }
     
+    // Calculate message integrity hash
     private static String calculateHash(String contentToEncode) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
@@ -318,6 +301,7 @@ public class SKFSClient {
         }
     }
     
+    // Calculate HMAC used for REST API authentication
     private static String calculateHMAC(String secret, String data) {
         try {
             SecretKeySpec signingKey = new SecretKeySpec(DatatypeConverter.parseHexBinary(secret), "HmacSHA256");
