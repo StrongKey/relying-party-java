@@ -98,20 +98,20 @@ public class SKFSClient {
         if(regOptions == null){
             JsonObjectBuilder regOptionBuilder = Json.createObjectBuilder();
             JsonObjectBuilder authSelectBuilder = Json.createObjectBuilder();
-            if(AUTHENTICATORATTACHMENT != null){
+            if(AUTHENTICATORATTACHMENT != null && !AUTHENTICATORATTACHMENT.isEmpty()){
                 authSelectBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS_ATTACHMENT, AUTHENTICATORATTACHMENT);
             }
-            if(REQUIRERESIDENTKEY != null){
+            if(REQUIRERESIDENTKEY != null && !REQUIRERESIDENTKEY.isEmpty()){
                 authSelectBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS_RESIDENTKEY, REQUIRERESIDENTKEY);
             }
-            if(REG_USERVERIFICATION != null){
+            if(REG_USERVERIFICATION != null && !REG_USERVERIFICATION.isEmpty()){
                 authSelectBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS_USERVERIFICATION, REG_USERVERIFICATION);
             }
             JsonObject authSelect = authSelectBuilder.build();
             if(!authSelect.isEmpty()){
                 regOptionBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS_ATTACHMENT, authSelect);
             }
-            if(ATTESTATION != null){
+            if(ATTESTATION != null && !ATTESTATION.isEmpty()){
                 regOptionBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS_ATTESTATION, ATTESTATION);
             }
             regOptions = regOptionBuilder.build();
@@ -156,7 +156,7 @@ public class SKFSClient {
         // Construct Option Json if it has not already been parsed together
         if (authOptions == null) {
             JsonObjectBuilder authOptionBuilder = Json.createObjectBuilder();
-            if (AUTH_USERVERIFICATION != null) {
+            if (AUTH_USERVERIFICATION != null && !AUTH_USERVERIFICATION.isEmpty()) {
                 authOptionBuilder.add(Constants.SKFS_JSON_KEY_OPTIONS_USERVERIFICATION, AUTH_USERVERIFICATION);
             }
             authOptions = authOptionBuilder.build();

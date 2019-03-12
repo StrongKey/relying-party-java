@@ -16,7 +16,7 @@ public class WebauthnTutorialLogger {
     private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger("WEBAUTHNTUTORIAL", "resources.webauthntutorial-messages");
     
     // Load messages for Exceptions
-    private static final ResourceBundle MESSAGEBUNDLE = ResourceBundle.getBundle("resources.webauthntutorial-messages", Locale.getDefault());
+    private static final ResourceBundle MESSAGEBUNDLE = ResourceBundle.getBundle("resources.webauthntutorial-messages");
     
     public static final String getMessageProperty(String key) {
         return MESSAGEBUNDLE.getString(key);
