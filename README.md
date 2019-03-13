@@ -54,8 +54,6 @@ Follow the instructions below to install this sample.
     asadmin deploy webauthntutorial.war
     ```
 
-    **NOTE: The default administrative username/password as set by the install script for the FIDO Server is _admin/adminadmin_.**
-
 7. Test that the servlet is running by executing the following Curl command and confirming that you get the API _Web Application Definition Language (WADL)_ file back in response.
 
     ```sh
