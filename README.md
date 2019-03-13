@@ -33,34 +33,28 @@ Follow the instructions below to install this sample.
 3. Create a configuration file for the Relying Party application to configure a FIDO server.
 
     ```sh
-    vi /usr/local/strongkey/webauthntutorial/etc/webauthntutorial.properties
+    echo "webauthntutorial.cfg.property.apiuri=https://$(hostname):8181/api" > /usr/local/strongkey/webauthntutorial/etc/webauthntutorial.properties
     ```
 
-4. Add the following configuration to the file and replace &lt;FQDN&gt; with the FIDO server FQDN.
-
-    ```sh
-    webauthntutorial.cfg.property.apiuri=https://<FQDN>:8181/api
-    ```
-
-5. Download the Relying Party .war file [webauthntutorial.war](https://github.com/StrongKey/relying-party-java/blob/master/webauthntutorial.war).
+4. Download the Relying Party .war file [webauthntutorial.war](https://github.com/StrongKey/relying-party-java/blob/master/webauthntutorial.war).
 
     ```sh
     wget https://github.com/StrongKey/relying-party-java/raw/master/webauthntutorial.war
     ```
 
-6. Add the .war file to Payara.
+5. Add the .war file to Payara.
 
     ```sh
     asadmin deploy webauthntutorial.war
     ```
 
-7. Test that the servlet is running by executing the following Curl command and confirming that you get the API _Web Application Definition Language (WADL)_ file back in response.
+6. Test that the servlet is running by executing the following Curl command and confirming that you get the API _Web Application Definition Language (WADL)_ file back in response.
 
     ```sh
     curl -k https://localhost:8181/webauthntutorial/application.wadl
     ```
 
-8. For further testing, check out the sample [StrongKey WebAuthn client](https://github.com/StrongKey/WebAuthn).
+7. For further testing, check out the sample [StrongKey WebAuthn client](https://github.com/StrongKey/WebAuthn).
 
 ## Contributing to the Sample Relying Party
 
