@@ -1,20 +1,26 @@
 # relying-party-java
-This project is a sample WebAuthn Relying Party (shortened herein to Relying Party, or RP) web application written in Java to work with StrongKey's [FIDO Server, Community Edition](https://github.com/StrongKey/FIDO-Server) and sample [JavaScript WebAuthn client](https://github.com/StrongKey/WebAuthn).
+This project is a sample WebAuthn Relying Party (shortened herein to Relying Party, or RP) web application written in Java to work with StrongKey's [FIDO2 Server, Community Edition](https://github.com/StrongKey/FIDO-Server) and sample [JavaScript WebAuthn client](https://github.com/StrongKey/WebAuthn).
 
-The goals of this project are to demonstrate how to call StrongKey's FIDO Server APIs and how to properly manage users' FIDO keys. It is meant to serve as a reference implementation of a project that leverages StrongKey's FIDO Server to enable FIDO authentication. **If you are an application developer looking to FIDO-enable an application, look at this code.**
+The goals of this project are to demonstrate how to call StrongKey's FIDO2 Server APIs and how to properly manage users' FIDO2 keys. It is meant to serve as a reference implementation of a project that leverages StrongKey's FIDO2 Server to enable FIDO2 authentication. **If you are an application developer looking to FIDO2-enable an application, this code uses examples of the FIDO2 API calls.**
 
-For additional information on WebAuthn Relying Parties, visit the technical specification:
+The cybersecurity term, "Relying Party," originating from the jurisprudential term, was intended to represent legal entities that have a standing within a court of law where disputes related to digital signatures and non-repudiation could be argued; *a web application has no legal standing in court, but its owner does*. For additional information on WebAuthn Relying Parties, visit the technical specification:
+
 - [Definition of WebAuthn Relying Party](https://www.w3.org/TR/webauthn/#webauthn-relying-party)
-- [Complete WebAuthn Specification](https://www.w3.org/TR/webauthn)
+- [Complete WebAuthn specification](https://www.w3.org/TR/webauthn)
+- [A useful diagram of WebAuthn functional flow](https://www.w3.org/TR/webauthn/#api)
+
+For more information on the originating jargon and related terms, visit the Internet Engineering Task Force (IETF) Request for Comments (RFC):
+
+- The definition of Relying Party is in the [second paragraph of 1.1. Background](https://tools.ietf.org/html/rfc3647#section-1.1)
 
 Follow the instructions below to install this sample.
 
 ## Prerequisites
 
-- This Relying Party example must have a means of connecting with a StrongKey FIDO Server. You can install a FIDO Server either on the same server as your RP or a different server.
-- You must have a Java Application Server. These instructions assume you are using Payara (GlassFish).
+- This Relying Party web application example must have a means of connecting with a StrongKey FIDO2 Server. You can install a FIDO2 Server either on the same machine as your RP web application or a different one.
+- You must have a Java web application server. These instructions assume you are using Payara (GlassFish).
 - The instructions assume the default ports for all the applications installed; Payara runs HTTPS on port 8181 by default, so make sure all firewall rules allow that port to be accessible.
-- **The sample commands below assume you are installing this RP on the same server where StrongKey FIDO Server has been installed.** If you are installing on a separate server, you may have to adjust the commands accordingly.
+- **The sample commands below assume you are installing this RP web application on the same machine where StrongKey FIDO2 Server has been installed.** If you are installing on a separate machine, you may have to adjust the commands accordingly.
 
 ## Installation Instructions
 
@@ -30,19 +36,19 @@ Follow the instructions below to install this sample.
     mkdir -p /usr/local/strongkey/webauthntutorial/etc
     ```
 
-3. Create a configuration file for the Relying Party application to configure a FIDO server.
+3. Create a configuration file for the Relying Party web application to configure a FIDO2 Server.
 
     ```sh
     vi /usr/local/strongkey/webauthntutorial/etc/webauthntutorial.properties
     ```
 
-4. Add the following configuration to the file and replace &lt;FQDN&gt; with the FIDO server FQDN.
+4. Add the following configuration to the file and replace &lt;FQDN&gt; with the FIDO2 Server FQDN.
 
     ```sh
     webauthntutorial.cfg.property.apiuri=https://<FQDN>:8181/api
     ```
 
-5. Download the Relying Party .war file [webauthntutorial.war](https://github.com/StrongKey/relying-party-java/blob/master/webauthntutorial.war).
+5. Download the Relying Party web application .war file [webauthntutorial.war](https://github.com/StrongKey/relying-party-java/blob/master/webauthntutorial.war).
 
     ```sh
     wget https://github.com/StrongKey/relying-party-java/raw/master/webauthntutorial.war
@@ -54,19 +60,23 @@ Follow the instructions below to install this sample.
     asadmin deploy webauthntutorial.war
     ```
 
-    **NOTE: The default administrative username/password as set by the install script for the FIDO Server is _admin/adminadmin_.**
+    **NOTE: The default administrative username/password as set by the install script for the FIDO2 Server is _admin/adminadmin_.**
 
-7. Test that the servlet is running by executing the following Curl command and confirming that you get an HTTP 405 error.
+7. Test that the servlet is running by executing the following Curl command.  You should get the API Web Application Definition Language (WADL) file back in response.
 
     ```sh
-    curl -k https://localhost:8181/webauthntutorial/preregister
+    curl -k https://localhost:8181/webauthntutorial/application.wadl
     ```
 
-8. For further testing, check out the sample [StrongKey WebAuthn client](https://github.com/StrongKey/WebAuthn).
+8. To test this installation of the FIDO2 server, check out the sample [StrongKey WebAuthn client](https://github.com/StrongKey/WebAuthn).
 
-## Contributing to the Sample Relying Party
+## Removal
 
-If you would like to contribute to the sample Relying Party project, please read [CONTRIBUTING.md](https://github.com/StrongKey/relying-party-java/blob/master/CONTRIBUTING.md), then sign and return the [Contributor License Agreement (CLA)](https://cla-assistant.io/StrongKey/FIDO-Server).
+To uninstall the RP sample web application, follow the uninstall instructions in the [FIDO2 Server, Community Edition Installation Guide](https://github.com/StrongKey/FIDO-Server/blob/master/docs/Installation_Guide_Linux.md#removal). Removing the StrongKey FIDO Server also removes the sample RP web application and sample WebAuthn client.
+
+## Contributing to the Sample Relying Party Web Application 
+
+If you would like to contribute to the sample Relying Party web application project, please read [CONTRIBUTING.md](https://github.com/StrongKey/relying-party-java/blob/master/CONTRIBUTING.md), then sign and return the [Contributor License Agreement (CLA)](https://cla-assistant.io/StrongKey/FIDO-Server).
 
 ## Licensing
 This project is currently licensed under the [GNU Lesser General Public License v2.1](https://github.com/StrongKey/relying-party-java/blob/master/LICENSE).
