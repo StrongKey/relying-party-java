@@ -1,5 +1,4 @@
 # Contributing to StrongKey's FIDO Server
-
 We welcome contributions to this open-source FIDO Server Relying Party (RP) web application! This guide provides some tips for successful contributions.
 
 For some background on WebAuthn/FIDO2 and its backers, visit the [FIDO2 Project](https://fidoalliance.org/fido2/). 
@@ -28,7 +27,7 @@ We use GitHub [Issues](https://github.com/StrongKey/relying-party-java/issues) t
 
 ### Did you discover a bug?
 
-Do not open up a GitHub Issue if the bug is a security vulnerability in FIDO Server, and instead email [support@strongkey.com](mailto:support@strongkey.com).
+Do not open up a GitHub Issue if the bug is a security vulnerability in FIDO2 Server, and instead email [support@strongkey.com](mailto:support@strongkey.com).
 
 Ensure the bug was not already reported by searching on GitHub Issues.
 
