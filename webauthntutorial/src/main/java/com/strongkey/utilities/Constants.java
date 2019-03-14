@@ -1,40 +1,13 @@
-package com.strongkey.utilities;
-
-/*
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License, as published by the Free Software Foundation and
- * available at http://www.fsf.org/licensing/licenses/lgpl.html,
- * version 2.1 or above.
+/**
+ * Copyright StrongAuth, Inc. All Rights Reserved.
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- *
- * Copyright (c) 2001-2019 StrongAuth, Inc.
- *
- * $Date: 
- * $Revision:
- * $Author: mishimoto $
- * $URL: 
- *
- * *********************************************
- *                    888
- *                    888
- *                    888
- *  88888b.   .d88b.  888888  .d88b.  .d8888b
- *  888 "88b d88""88b 888    d8P  Y8b 88K
- *  888  888 888  888 888    88888888 "Y8888b.
- *  888  888 Y88..88P Y88b.  Y8b.          X88
- *  888  888  "Y88P"   "Y888  "Y8888   88888P'
- *
- * *********************************************
- * 
- *
- *
+ * Use of this source code is governed by the Gnu Lesser General Public License 2.3.
+ * The license can be found at https://github.com/StrongKey/relying-party-java/LICENSE
  */
 
+package com.strongkey.utilities;
+
+// Constants
 public class Constants {
     // Webauthn tutorial (Relying Party (RP)) Path names
     public static final String RP_PREGISTER_PATH = "preregister";
@@ -50,11 +23,12 @@ public class Constants {
     public static final String RP_PATH_REMOVEKEYS = "removeKeys";
     
     
-    // SKFS web service names
+    // SKFS REST API names
     public static final String SKFS_PATH_DOMAINS = "domains";
     public static final String SKFS_PATH_FIDOKEYS = "fidokeys";
     public static final String SKFS_PATH_CHALLENGE = "challenge";
-    public static final String SKFS_PATH_AUTHENTICATE = "authenticate";
+    public static final String SKFS_PATH_REGISTRATION = "registration";
+    public static final String SKFS_PATH_AUTHENTICATION = "authentication";
     
     // Session Information
     public static final String SESSION_USERNAME = "username";

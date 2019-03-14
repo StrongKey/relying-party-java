@@ -1,37 +1,10 @@
-/*
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License, as published by the Free Software Foundation and
- * available at http://www.fsf.org/licensing/licenses/lgpl.html,
- * version 2.1 or above.
+/**
+ * Copyright StrongAuth, Inc. All Rights Reserved.
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- *
- * Copyright (c) 2001-2019 StrongAuth, Inc.
- *
- * $Date: 
- * $Revision:
- * $Author: mishimoto $
- * $URL: 
- *
- * *********************************************
- *                    888
- *                    888
- *                    888
- *  88888b.   .d88b.  888888  .d88b.  .d8888b
- *  888 "88b d88""88b 888    d8P  Y8b 88K
- *  888  888 888  888 888    88888888 "Y8888b.
- *  888  888 Y88..88P Y88b.  Y8b.          X88
- *  888  888  "Y88P"   "Y888  "Y8888   88888P'
- *
- * *********************************************
- * 
- * 
- *
+ * Use of this source code is governed by the Gnu Lesser General Public License 2.3.
+ * The license can be found at https://github.com/StrongKey/relying-party-java/LICENSE
  */
+
 package com.strongkey.webauthntutorial;
 
 import com.strongkey.database.UserDatabase;
@@ -70,6 +43,7 @@ public class WebauthnService {
     @EJB
     private UserDatabase userdatabase;
     
+    // Endpoint to request a registration challenge (for a new account).
     @POST
     @Path("/" + Constants.RP_PREGISTER_PATH)
     @Consumes({MediaType.APPLICATION_JSON})
@@ -104,6 +78,9 @@ public class WebauthnService {
         }
     }
     
+    // Endpoint to send a signed registration challenge (for a new account). On
+    // successful verification of the signed challenge, create the user's account
+    // and logs the user in.
     @POST
     @Path("/" + Constants.RP_REGISTER_PATH)
     @Consumes({MediaType.APPLICATION_JSON})
@@ -139,6 +116,10 @@ public class WebauthnService {
         }
     }
     
+    // Endpoint that allows a signed in user to register additional FIDO2 keys to
+    // their account. The endpoint will return a registration challenge that can
+    // signed by a FIDO2 key that is not already associated with the user to
+    // register that key.
     @POST
     @Path("/" + Constants.RP_PREGISTER_EXISTING_PATH)
     @Consumes({MediaType.APPLICATION_JSON})
@@ -172,6 +153,9 @@ public class WebauthnService {
         }
     }
     
+    // Endpoint for a logged in user to send a signed registration challenge. On
+    // successful verification of the signed challenge, the user will be able to
+    // authenticate themselves using the FIDO2 key that signed the challenge.
     @POST
     @Path("/" + Constants.RP_REGISTER_EXISTING_PATH)
     @Consumes({MediaType.APPLICATION_JSON})
@@ -200,6 +184,8 @@ public class WebauthnService {
         }
     }
     
+    // Endpoint that allows a user to request a challenge to authenicate
+    // themselves
     @POST
     @Path("/" + Constants.RP_PREAUTHENTICATE_PATH)
     @Consumes({MediaType.APPLICATION_JSON})
@@ -228,6 +214,8 @@ public class WebauthnService {
         }
     }
     
+    // Endpoint to send a signed authentication challenge. On successful
+    // verification of the signed challenge, the user will be logged in
     @POST
     @Path("/" + Constants.RP_AUTHENTICATE_PATH)
     @Consumes({MediaType.APPLICATION_JSON})
@@ -258,6 +246,7 @@ public class WebauthnService {
         }
     }
     
+    // Endpoint that allows the frontend to check whether the user is logged in.
     @POST
     @Path("/" + Constants.RP_ISLOGGEDIN_PATH)
     @Produces({MediaType.APPLICATION_JSON})
@@ -281,6 +270,7 @@ public class WebauthnService {
         }
     }
     
+    // Endpoint that allows a logged in user to logout
     @POST
     @Path("/" + Constants.RP_LOGOUT_PATH)
     @Produces({MediaType.APPLICATION_JSON})
@@ -300,6 +290,9 @@ public class WebauthnService {
         }
     }
     
+    // Endpoint that allows a logged in user delete their account. This endpoint
+    // will delete their account and delete all keys associated with their account
+    // on the SKFS
     @POST
     @Path("/" + Constants.RP_PATH_DELETEACCOUNT)
     @Produces({MediaType.APPLICATION_JSON})
@@ -332,6 +325,8 @@ public class WebauthnService {
         }
     }
     
+    // Endpoint that allows a logged in user to request all keys that they  
+    // registered on their account
     @POST
     @Path("/" + Constants.RP_PATH_GETKEYS)
     @Produces({MediaType.APPLICATION_JSON})
@@ -360,6 +355,8 @@ public class WebauthnService {
         }
     }
     
+    // Endpoint that allows a logged in user to delete FIDO2 keys they have registered
+    // on their account
     @POST
     @Path("/" + Constants.RP_PATH_REMOVEKEYS)
     @Consumes({MediaType.APPLICATION_JSON})
@@ -406,15 +403,19 @@ public class WebauthnService {
         }
     }
     
+    // Retrieves the protocol + domain + port (eg. https://localhost:8181) that
+    // the enduser send the request to
     private String getOrigin() throws URISyntaxException{
         URI requestURL = new URI(request.getRequestURL().toString());
         return requestURL.getScheme() + "://" + requestURL.getAuthority();
     }
     
+    // Return whether an account with this username already exists
     private boolean doesAccountExists(String username){
         return userdatabase.doesUserExist(username);
     }
     
+    // Parse user input
     private String getValueFromInput(String key, JsonObject input) {
         String username = input.getString(key, null);
         if (username == null) {
@@ -423,6 +424,7 @@ public class WebauthnService {
         return username;
     }
     
+    // Parse array of user keys from user input
     private JsonArray getKeyIdsFromInput(JsonObject input){
         JsonArray keyIds = input.getJsonArray(Constants.RP_JSON_KEY_KEYIDS);
         if (keyIds == null) {
@@ -431,12 +433,14 @@ public class WebauthnService {
         return keyIds;
     }
     
+    // Parse array of user keys from SKFS response
     private JsonArray getKeyIdsFromSKFSResponse(String SKFSResponse) {
         JsonObject SKFSResponseObject = Json.createReader(new StringReader(SKFSResponse)).readObject();
         return SKFSResponseObject.getJsonObject(Constants.SKFS_RESPONSE_JSON_KEY_RESPONSE)
                 .getJsonArray(Constants.SKFS_RESPONSE_JSON_KEY_KEYS);
     }
     
+    // Parse response string from SKFS
     private String getResponseFromSKFSResponse(String SKFSResponse) {
         JsonObject SKFSResponseObject = Json.createReader(new StringReader(SKFSResponse)).readObject();
         String response = SKFSResponseObject.getString(Constants.SKFS_RESPONSE_JSON_KEY_RESPONSE, null);
@@ -446,7 +450,7 @@ public class WebauthnService {
         return response;
     }
     
-    
+    // Remove all keys
     private void removeKeys(JsonArray keyIds){
         for(int keyIndex = 0; keyIndex < keyIds.size(); keyIndex++){
             try{
@@ -458,10 +462,9 @@ public class WebauthnService {
         }
     }
     
-    /*
-        A standard method of communicating with the frontend code. This can be
-        modified as needed to fit the needs of the site being build.
-    */
+    
+    // A standard method of communicating with the frontend code. This can be
+    // modified as needed to fit the needs of the site being build.
     private Response generateResponse(Status status, String responsetext) {
         String response = status.equals(Response.Status.OK) ? responsetext : "";
         String message = status.equals(Response.Status.OK) ? "": responsetext;
