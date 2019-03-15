@@ -51,7 +51,7 @@ Follow the instructions below to install this sample.
 5. Add the .war file to Payara.
 
     ```sh
-    asadmin deploy webauthntutorial.war
+    payara41/glassfish/bin/asadmin deploy webauthntutorial.war
     ```
 
 6. Test that the servlet is running by executing the following Curl command and confirming that you get the API _Web Application Definition Language (WADL)_ file back in response.
