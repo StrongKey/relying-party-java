@@ -29,7 +29,7 @@ We use GitHub [Issues](https://github.com/StrongKey/relying-party-java/issues) t
 
 Do not open up a GitHub Issue if the bug is a security vulnerability in FIDO2 Server, and instead email [support@strongkey.com](mailto:support@strongkey.com).
 
-Ensure the bug was not already reported by searching on GitHub Issues.
+Ensure the bug was not already reported by searching in GitHub Issues.
 
 If you're unable to find an open issue addressing the problem, open a new one. Be sure to include a title and clear description, as much relevant information as possible, and a code sample or an executable test case demonstrating the expected behavior that is not occurring.
 
